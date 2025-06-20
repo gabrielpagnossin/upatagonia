@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: IA en la Educación de Ingeniería</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!--
+    Plan de Narrativa y Estructura:
+    1.  El Desafío: Enganchar con el problema del rendimiento en matemáticas.
+    2.  IA como Solución: Presentar los beneficios clave de la IA.
+    3.  Cómo Funciona la IA: Explicar el ciclo de diagnóstico y personalización.
+    4.  El Kit de Herramientas de IA: Comparar plataformas gratuitas recomendadas.
+    5.  Hoja de Ruta para la Implementación: Visualizar los pasos estratégicos.
+    6.  Superando Obstáculos: Abordar los desafíos de la implementación.
+    7.  Conclusión: Reforzar el mensaje del potencial transformador de la IA.
+
+    Selección de Visualizaciones (Confirmación de NO SVG / NO MERMAID JS):
+    -   Tasa de Dificultad: Donut Chart (Chart.js/Canvas). Meta: Informar.
+    -   Beneficios Clave: Tarjetas con Iconos Unicode (HTML/CSS). Meta: Organizar.
+    -   Ciclo de Aprendizaje Adaptativo: Diagrama de flujo (HTML/CSS). Meta: Mostrar Proceso.
+    -   Aplicabilidad de Herramientas: Bar Chart (Chart.js/Canvas). Meta: Comparar.
+    -   Hoja de Ruta: Línea de tiempo vertical (HTML/CSS). Meta: Mostrar Proceso.
+    -   Desafíos de Implementación: Radar Chart (Chart.js/Canvas). Meta: Comparar.
+    -   NI MERMAID JS NI SVG fueron utilizados en esta infografía. Toda la visualización se logra mediante Chart.js sobre Canvas y elementos HTML estilizados con Tailwind CSS.
+
+    Paleta de Colores Seleccionada: Brilliant Blues (#00A6ED, #7FDEFF, #B2FDFF, #2D3748, #F7FAFC).
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7FAFC;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            width: 100%;
+            max-width: 600px;
+            height: 320px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flow-arrow::after {
+            content: '▼';
+            font-size: 2rem;
+            color: #00A6ED;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#2D3748] mb-4">Potenciando el Futuro de la Ingeniería</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Cómo la Inteligencia Artificial está revolucionando el aprendizaje de las matemáticas en el primer año universitario.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <section class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#00A6ED] mb-4 text-center">1. El Desafío Inicial: Las Matemáticas en Ingeniería</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="text-center md:text-left">
+                        <p class="mb-4 text-gray-600">El primer año de ingeniería es un filtro crítico. Asignaturas fundamentales como el cálculo y el álgebra presentan una barrera significativa, donde un alto porcentaje de estudiantes lucha por alcanzar los conocimientos mínimos requeridos, comprometiendo su permanencia.</p>
+                        <p class="text-5xl font-black text-[#2D3748]">7 de cada 10</p>
+                        <p class="text-lg text-gray-700 font-semibold">estudiantes reportan dificultades significativas en matemáticas.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="dificultadChart"></canvas>
+                    </div>
+                </div>
+                 <p class="text-center mt-4 text-sm text-gray-500">El gráfico ilustra la proporción estimada de estudiantes que enfrentan dificultades, un desafío que la IA puede ayudar a mitigar. La cifra es una representación para fines ilustrativos basada en la problemática descrita.</p>
+            </section>
+
+            <section class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#00A6ED] mb-6 text-center">2. La IA como Solución: Beneficios Clave del Aprendizaje Adaptativo</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">La IA ofrece un cambio de paradigma, moviendo la educación de un modelo único para todos a una experiencia de aprendizaje dinámica y centrada en el estudiante.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center p-4 border border-gray-200 rounded-lg">
+                        <p class="text-4xl mb-2">🎯</p>
+                        <h3 class="font-bold text-lg text-[#2D3748]">Personalización</h3>
+                        <p class="text-sm text-gray-600">Adapta el contenido y el ritmo a las necesidades de cada alumno.</p>
+                    </div>
+                    <div class="text-center p-4 border border-gray-200 rounded-lg">
+                        <p class="text-4xl mb-2">💬</p>
+                        <h3 class="font-bold text-lg text-[#2D3748]">Feedback Inmediato</h3>
+                        <p class="text-sm text-gray-600">Permite corregir errores en tiempo real, acelerando la comprensión.</p>
+                    </div>
+                    <div class="text-center p-4 border border-gray-200 rounded-lg">
+                        <p class="text-4xl mb-2">🔍</p>
+                        <h3 class="font-bold text-lg text-[#2D3748]">Diagnóstico Preciso</h3>
+                        <p class="text-sm text-gray-600">Identifica con exactitud las brechas de conocimiento del estudiante.</p>
+                    </div>
+                    <div class="text-center p-4 border border-gray-200 rounded-lg">
+                        <p class="text-4xl mb-2">📈</p>
+                        <h3 class="font-bold text-lg text-[#2D3748]">Mayor Retención</h3>
+                        <p class="text-sm text-gray-600">Aumenta la motivación y el compromiso, reduciendo la deserción.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="lg:col-span-1 md:col-span-1 bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center">
+                <h2 class="text-2xl font-bold text-[#00A6ED] mb-4 text-center">3. El Ciclo de Aprendizaje Adaptativo</h2>
+                <p class="text-center text-gray-600 mb-6">La IA crea un ciclo de mejora continua que empodera al estudiante.</p>
+                <div class="flex flex-col items-center">
+                    <div class="bg-[#B2FDFF] text-[#2D3748] p-4 rounded-lg shadow-sm w-full text-center">
+                        <p class="font-bold">1. Interacción del Estudiante</p>
+                        <p class="text-sm">Resuelve problemas en la plataforma.</p>
+                    </div>
+                    <div class="flow-arrow"></div>
+                    <div class="bg-[#B2FDFF] text-[#2D3748] p-4 rounded-lg shadow-sm w-full text-center">
+                        <p class="font-bold">2. Análisis de Datos por IA</p>
+                        <p class="text-sm">El sistema analiza patrones de aciertos y errores.</p>
+                    </div>
+                    <div class="flow-arrow"></div>
+                    <div class="bg-[#B2FDFF] text-[#2D3748] p-4 rounded-lg shadow-sm w-full text-center">
+                        <p class="font-bold">3. Diagnóstico de Brechas</p>
+                        <p class="text-sm">La IA identifica los conceptos débiles.</p>
+                    </div>
+                    <div class="flow-arrow"></div>
+                     <div class="bg-[#B2FDFF] text-[#2D3748] p-4 rounded-lg shadow-sm w-full text-center">
+                        <p class="font-bold">4. Adaptación del Contenido</p>
+                        <p class="text-sm">Se presentan nuevos ejercicios y recursos personalizados.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="md:col-span-2 lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#00A6ED] mb-4 text-center">4. El Kit de Herramientas de IA Gratuitas</h2>
+                <p class="text-center text-gray-600 mb-6">Existen plataformas de uso público y gratuito con un alto potencial para la enseñanza de la ingeniería. Este gráfico compara su aplicabilidad directa en los temas de matemáticas universitarias.</p>
+                <div class="chart-container">
+                    <canvas id="herramientasChart"></canvas>
+                </div>
+            </section>
+            
+            <section class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#00A6ED] mb-6 text-center">5. Hoja de Ruta para una Implementación Exitosa</h2>
+                 <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">La adopción de IA requiere una estrategia clara y por fases para garantizar un impacto positivo y sostenible en la comunidad universitaria.</p>
+                <div class="relative w-full">
+                    <div class="border-l-4 border-[#00A6ED] absolute h-full top-0 left-1/2 -ml-0.5"></div>
+                    <div class="mb-8 flex justify-between items-center w-full">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#00A6ED] shadow-xl w-12 h-12 rounded-full">
+                            <h1 class="mx-auto font-bold text-lg text-white">1</h1>
+                        </div>
+                        <div class="order-1 bg-[#B2FDFF] rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <h3 class="mb-2 font-bold text-[#2D3748] text-lg">Programa Piloto</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-700">Iniciar con plataformas gratuitas (Khan Academy, GeoGebra) en un grupo controlado.</p>
+                        </div>
+                    </div>
+                    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#00A6ED] shadow-xl w-12 h-12 rounded-full">
+                            <h1 class="mx-auto text-white font-bold text-lg">2</h1>
+                        </div>
+                        <div class="order-1 bg-[#B2FDFF] rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <h3 class="mb-2 font-bold text-[#2D3748] text-lg">Integración Curricular</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-700">Incorporar el uso de la IA como parte de la evaluación formativa en el plan de estudios.</p>
+                        </div>
+                    </div>
+                    <div class="mb-8 flex justify-between items-center w-full">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#00A6ED] shadow-xl w-12 h-12 rounded-full">
+                            <h1 class="mx-auto font-bold text-lg text-white">3</h1>
+                        </div>
+                        <div class="order-1 bg-[#B2FDFF] rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <h3 class="mb-2 font-bold text-[#2D3748] text-lg">Formación Dual</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-700">Capacitar a docentes en la interpretación de datos y a estudiantes en el uso autónomo de las herramientas.</p>
+                        </div>
+                    </div>
+                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#00A6ED] shadow-xl w-12 h-12 rounded-full">
+                            <h1 class="mx-auto text-white font-bold text-lg">4</h1>
+                        </div>
+                        <div class="order-1 bg-[#B2FDFF] rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <h3 class="mb-2 font-bold text-[#2D3748] text-lg">Monitoreo y Evaluación</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-700">Medir el impacto en el rendimiento y la retención para ajustar la estrategia continuamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                 <h2 class="text-2xl font-bold text-[#00A6ED] mb-4 text-center">6. Superando Obstáculos: Áreas Críticas a Considerar</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                     <div>
+                        <p class="text-gray-600 mb-4">El éxito no es solo tecnológico, sino también pedagógico y ético. Es crucial abordar proactivamente los desafíos para construir un ecosistema de IA justo y eficaz.</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                           <li><span class="font-bold">Formación y Cultura:</span> Capacitar a docentes y estudiantes es prioritario para un uso efectivo.</li>
+                           <li><span class="font-bold">Ética y Privacidad:</span> Se necesita un marco de gobernanza de datos claro y transparente.</li>
+                           <li><span class="font-bold">Infraestructura y Equidad:</span> Garantizar el acceso equitativo a la tecnología para evitar ampliar la brecha digital.</li>
+                        </ul>
+                     </div>
+                     <div class="chart-container">
+                        <canvas id="desafiosChart"></canvas>
+                     </div>
+                 </div>
+                 <p class="text-center mt-4 text-sm text-gray-500">El gráfico de radar muestra la importancia relativa de abordar cada desafío para una implementación holística y exitosa.</p>
+            </section>
+            
+        </main>
+
+        <footer class="text-center mt-12 py-6 border-t border-gray-200">
+             <p class="text-2xl font-bold text-[#2D3748] mb-2">Un Futuro Impulsado por la IA 🚀</p>
+            <p class="text-gray-600">La integración estratégica de la IA tiene el potencial no solo de mejorar las calificaciones, sino de formar ingenieros más autónomos, resilientes y preparados para los desafíos del mañana.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const brilliantBluesPalette = {
+            primary: '#00A6ED',
+            secondary: '#7FDEFF',
+            background: 'rgba(0, 166, 237, 0.2)',
+            text: '#2D3748'
+        };
+
+        const wrapLabel = (label, maxWidth) => {
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + ' ' + words[i]).length > maxWidth) {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                } else {
+                    currentLine += ' ' + words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        };
+
+        const universalTooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const createDificultadChart = () => {
+            const ctx = document.getElementById('dificultadChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Estudiantes con Dificultades', 'Estudiantes sin Dificultades'],
+                    datasets: [{
+                        data: [70, 30],
+                        backgroundColor: [
+                            brilliantBluesPalette.primary,
+                            '#E2E8F0'
+                        ],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                           enabled: true
+                        }
+                    }
+                }
+            });
+        };
+
+        const createHerramientasChart = () => {
+            const ctx = document.getElementById('herramientasChart').getContext('2d');
+            const rawLabels = ['Khan Academy', 'Open edX', 'GeoGebra', 'Wolfram Alpha', 'Socratic', 'Quizlet'];
+            const labels = rawLabels.map(l => wrapLabel(l, 16));
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Aplicabilidad en Ingeniería (Escala 1-5)',
+                        data: [5, 5, 5, 4, 3, 3],
+                        backgroundColor: brilliantBluesPalette.background,
+                        borderColor: brilliantBluesPalette.primary,
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    ...universalTooltipCallback,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 5,
+                            ticks: {
+                                color: brilliantBluesPalette.text
+                            },
+                             grid: {
+                                color: '#E2E8F0'
+                            }
+                        },
+                        x: {
+                             ticks: {
+                                color: brilliantBluesPalette.text
+                            },
+                             grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                           display: false
+                        }
+                    }
+                }
+            });
+        };
+
+        const createDesafiosChart = () => {
+            const ctx = document.getElementById('desafiosChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Formación Docente', 
+                        ['Privacidad', 'y Ética'], 
+                        'Infraestructura',
+                        ['Brecha', 'Digital'], 
+                        ['Capacitación', 'Estudiantil']
+                    ],
+                    datasets: [{
+                        label: 'Nivel de Criticidad',
+                        data: [5, 5, 4, 4, 5],
+                        fill: true,
+                        backgroundColor: brilliantBluesPalette.background,
+                        borderColor: brilliantBluesPalette.primary,
+                        pointBackgroundColor: brilliantBluesPalette.primary,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: brilliantBluesPalette.primary
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                     ...universalTooltipCallback,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#CBD5E0' },
+                            grid: { color: '#CBD5E0' },
+                            pointLabels: { 
+                                font: { size: 12 },
+                                color: brilliantBluesPalette.text
+                            },
+                            ticks: {
+                                backdropColor: '#F7FAFC',
+                                color: brilliantBluesPalette.text
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 5
+                        }
+                    },
+                     plugins: {
+                        legend: {
+                           display: false
+                        }
+                    }
+                }
+            });
+        };
+
+        window.onload = () => {
+            createDificultadChart();
+            createHerramientasChart();
+            createDesafiosChart();
+        };
+    </script>
+</body>
+</html>
